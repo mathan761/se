@@ -1,9 +1,6 @@
-print('Hello World!')
-
-world = 'World'
-print(f"Hello {world}!")
-
-one = 'Hello'
-two = ' '
-three = 'World!'
-print(one + two + three)
+arr = [1, 2, 3, 4, 5]
+value = int(input('Введите значение переменной: '))
+if value in arr:
+    print('Переменная есть в массиве')
+else:
+    print('Переменной нет в массиве')

@@ -1,2 +1,3 @@
-a,b,c = 1,2,3
-print(a,b,c)
+phrase = "Hello World"
+for char in phrase[::-1]:
+    print(char)

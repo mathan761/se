@@ -1,6 +1,9 @@
-one = 12
-two = 5
-print('Возведение в степень:', one ** two)
-print('Обычное деление:', one / two)
-print('Целочисленное деление:', one // two)
-print('Нахождение остатка от деления:', one % two)
+string = "Привет всем изучающим Python!"
+value = input()
+for i in string:
+    if i == value:
+        index = string.find(value)
+        print(f"Буква '{value}' есть в строке под {index} индексом")
+        break
+else:
+    print(f"Буквы '{value}' нет в указанной строке")

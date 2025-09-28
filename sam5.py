@@ -1,2 +1,13 @@
-day, month, year = 13,'сентября',2025
-print(f"Сегодня {day} {month} {year}. ", end = 'Всего хорошего!')
+string = 'hello'
+memory = ' world'
+counter = 0
+values = [0, 2, 4, 6, 8, 10]
+
+while counter != 10:
+    if counter in values:
+        print(string + memory)
+    else:
+        print(string)
+    
+    if counter < 10:
+        counter += 1
