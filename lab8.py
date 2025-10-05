@@ -1,9 +1,10 @@
-value = 0
-while value < 100:
-    if value == 0:
-        value += 10
-    elif value // 5 > 1:
-        value *= 5
-    else:
-        value -= 5
-    print(value)
+import math
+
+def main():
+    value = int(input('Введите значение: '))
+    print(math.sqrt(value))
+    print(math.sin(value))
+    print(math.cos(value))
+
+if __name__ == '__main__':
+    main()

@@ -1,12 +1,13 @@
-for i in range(10):
-    print(f'i = {i}')
-    if i == 0:
-        i += 2
-    if i == 1:
-        continue
-    if i == 2 or i == 3:
-        print("Переменная равна 2 или 3")
-    elif i in [4, 5, 6]:
-        print("Переменная равна 4, 5 или 6")
-    else:
-        break
+def main(**kwargs):
+    for i in kwargs.items():
+        print(i[0], i[1])
+
+    print()
+
+    for key in kwargs:
+        print(f"{key}={kwargs[key]}")
+
+if __name__ == '__main__':
+    main(x=[1, 2, 3], y=[3, 3, 0], z=[2, 3, 0], q=[3, 3, 0], w=[3, 3, 0])
+    print()
+    main(**{'x': [1, 2, 3], 'y': [3, 3, 0]})

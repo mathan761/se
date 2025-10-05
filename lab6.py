@@ -1,9 +1,9 @@
-string = "Привет всем изучающим Python!"
-value = input()
-for i in string:
-    if i == value:
-        index = string.find(value)
-        print(f"Буква '{value}' есть в строке под {index} индексом")
-        break
-else:
-    print(f"Буквы '{value}' нет в указанной строке")
+def mean(data):
+    return sum(data) / float(len(data))
+
+def main(**kwargs):
+    for i, j in kwargs.items():
+        print(f"{i}. Значение = {mean(j)}")
+
+if __name__ == '__main__':
+    main(X=[1, 2, 3], Y=[3, 3, 0])

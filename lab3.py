@@ -1,6 +1,6 @@
-arr = [1, 2, 3, 4, 5]
-value = int(input('Введите значение переменной: '))
-if value in arr:
-    print('Переменная есть в массиве')
-else:
-    print('Переменной нет в массиве')
+def main(one, two):
+    return one + two
+
+for i in range(5):
+    answer = main(one=1, two=10)
+    print(answer)

@@ -1,13 +1,19 @@
-string = 'hello'
-memory = ' world'
-counter = 0
-values = [0, 2, 4, 6, 8, 10]
+from module import area
 
-while counter != 10:
-    if counter in values:
-        print(string + memory)
-    else:
-        print(string)
+def main():
+    print("Расчет площади треугольника")
     
-    if counter < 10:
-        counter += 1
+
+    side_a = float(input("Введите длину стороны a: "))
+    side_b = float(input("Введите длину стороны b: "))
+    side_c = float(input("Введите длину стороны c: "))
+
+    calc_area = area(side_a, side_b, side_c)
+    
+    print(f"\nДлины сторон: a={side_a}, b={side_b}, c={side_c}")
+    print(f"Полученная площадь треугольника: {calc_area:.2f}")
+        
+
+
+if __name__ == '__main__':
+    main()

@@ -1,9 +1,22 @@
-value = 0
-for i in range(10):
-    for j in range(10):
-        if i != j:
-            value += j
-        else:
-            pass
+from datetime import datetime as dt
+from datetime import timedelta as td
 
-print(value)
+def main():
+    today = dt.today()
+
+    n = int(input('Введите количество дней: '))
+
+    result = today + td(days=n)
+
+    print(
+        f"Сегодня {dt.today().date()}. "
+        f"День недели {dt.today().isoweekday()}"
+    )
+
+    print(
+        f"Через {n} дней будет {result.date()}. "
+        f"День недели {result.isoweekday()}"
+    )
+
+if __name__ == '__main__':
+    main()
