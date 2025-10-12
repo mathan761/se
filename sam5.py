@@ -1,19 +1,18 @@
-from module import area
-
-def main():
-    print("Расчет площади треугольника")
-    
-
-    side_a = float(input("Введите длину стороны a: "))
-    side_b = float(input("Введите длину стороны b: "))
-    side_c = float(input("Введите длину стороны c: "))
-
-    calc_area = area(side_a, side_b, side_c)
-    
-    print(f"\nДлины сторон: a={side_a}, b={side_b}, c={side_c}")
-    print(f"Полученная площадь треугольника: {calc_area:.2f}")
-        
+def make_custom_set(lst):
+    result = set()
+    for num in set(lst):
+        count = lst.count(num)
+        result.add(num)
+        for i in range(2, count + 1):
+            result.add(str(num) * i)
+    return result
 
 
-if __name__ == '__main__':
-    main()
+
+list_1 = [1, 1, 3, 3, 1]
+list_2 = [5, 5, 5, 5, 5, 5, 5]
+list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
+
+print(make_custom_set(list_1))
+print(make_custom_set(list_2))
+print(make_custom_set(list_3))

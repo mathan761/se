@@ -1,10 +1,12 @@
-import math
+from random import randint
 
-def main():
-    value = int(input('Введите значение: '))
-    print(math.sqrt(value))
-    print(math.sin(value))
-    print(math.cos(value))
+def list_maker():
+    a = [randint(1, 100)] * randint(3, 10)
+    return a
 
 if __name__ == '__main__':
-    main()
+    result = []
+    for i in range(randint(1, 5)):
+        result.append(list_maker())
+
+    print(result)

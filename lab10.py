@@ -1,21 +1,3 @@
-global result
+my_list = [2, 5, 8, 3]
 
-def rectangle():
-    a = float(input("Ширина: "))
-    b = float(input("Высота: "))
-    global result
-    result = a * b
-
-def triangle():
-    a = float(input("Основание: "))
-    h = float(input("Высота: "))
-    global result
-    result = 0.5 * a * h
-
-figure = input("1 - прямоугольник, 2 - треугольник: ")
-if figure == '1':
-    rectangle()
-if figure == '2':
-    triangle()
-
-print(f"Площадь: {result}")
+print(my_list[::-1])
