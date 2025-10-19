@@ -1,8 +1,19 @@
-def change_grades(grades: list[int]) -> list[int]:
-    grades = [4 if i == 3 else i for i in grades if i  != 2]
-    return grades
+def get_entry_exit_slice(tpl, element_id):
+    indices = [i for i, x in enumerate(tpl) if x == element_id]
+    num_occurrences = len(indices)
+    
+    if num_occurrences < 1:
+        return tuple()
+    
+    if num_occurrences == 1:
+        first_index = indices[0]
+        return tpl[first_index:]
+    
+    if num_occurrences >= 2:
+        first_index = indices[0]
+        second_index = indices[1]
+        return tpl[first_index : second_index + 1]
 
-print(change_grades([2, 3, 4, 5, 3, 4, 5, 2, 2, 5, 3, 4, 3, 5, 4]))
-print(change_grades([4, 2, 3, 5, 3, 5, 4, 2, 2, 5, 4, 3, 5, 3, 4]))
-print(change_grades([5, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 3, 4, 4]))
-
+print(get_entry_exit_slice((1, 2, 3), 8))
+print(get_entry_exit_slice((1, 8, 3, 4, 8, 8, 9, 2), 8))
+print(get_entry_exit_slice((1, 2, 8, 5, 1, 2, 9), 8))

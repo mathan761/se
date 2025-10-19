@@ -1,18 +1,18 @@
-def make_custom_set(lst):
-    result = set()
-    for num in set(lst):
-        count = lst.count(num)
-        result.add(num)
-        for i in range(2, count + 1):
-            result.add(str(num) * i)
-    return result
+def sum_even_numbers(number_list):
+    total_sum = 0
+    for number in number_list:
+        if isinstance(number, int) and number % 2 == 0:
+            total_sum += number
+    return total_sum
 
+list_a = [10, 5, 2, 1, 8, 3]
+result_a = sum_even_numbers(list_a)
+print(result_a)
 
+list_b = [1, 3, 5, 7, 9]
+result_b = sum_even_numbers(list_b)
+print(result_b)
 
-list_1 = [1, 1, 3, 3, 1]
-list_2 = [5, 5, 5, 5, 5, 5, 5]
-list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
-
-print(make_custom_set(list_1))
-print(make_custom_set(list_2))
-print(make_custom_set(list_3))
+list_c = [-4, 0, 11, -6, 1]
+result_c = sum_even_numbers(list_c)
+print(result_c)
