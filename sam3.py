@@ -1,21 +1,20 @@
-def text_stats(filename):
-    with open(filename, 'r', encoding='utf-8') as f:
-        text = f.read()
+class Smartphone:
+    def __init__(self, brand, model, battery):
+        self.brand = brand
+        self.model = model
+        self.battery = battery
 
-    letters = 0
-    for ch in text:
-        if ('a' <= ch.lower() <= 'z'):
-            letters += 1
+    def call(self):
+        print(f"Звонок с {self.brand} {self.model}")
 
-    words = text.split()
-    word_count = len(words)
+class GamingPhone(Smartphone):
+    def __init__(self, brand, model, battery, cooling):
+        super().__init__(brand, model, battery)
+        self.cooling = cooling
 
+    def turbo_mode(self):
+        print(f"{self.model} TURBO ON — {self.cooling} кулер активирован!")
 
-    with open(filename, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        line_count = len(lines)
-
-    print(f"Input file contains:\n{letters} letters\n{word_count} words\n{line_count} lines")
-
-# запуск программы
-text_stats('input.txt')
+rog = GamingPhone("ASUS", "ROG Phone 8", 95, "AeroActive Cooler")
+rog.call()
+rog.turbo_mode()

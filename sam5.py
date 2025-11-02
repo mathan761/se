@@ -1,13 +1,19 @@
-def analyze_file():
-    with open('input.txt', 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+class Weapon:
+    def fire(self):
+        pass
 
-    if not lines:
-        print("Файл пуст.")
-        return
+class Pistol(Weapon):
+    def fire(self):
+        return "Bang!"
 
-    longest = max(lines, key=len)
-    print(f"Количество строк в файле: {len(lines)}")
-    print(f"Самая длинная строка ({len(longest.strip())} символов): {longest.strip()}")
+class Rifle(Weapon):
+    def fire(self):
+        return "BANG-BANG-BANG!"
 
-analyze_file()
+class Sniper(Weapon):
+    def fire(self):
+        return "BOOM!"
+
+guns = [Pistol(), Rifle(), Sniper(), Pistol()]
+for gun in guns:
+    print(gun.fire())
