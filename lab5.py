@@ -1,26 +1,17 @@
-class Shape:
-    def area(self):
-        pass
+class Russian:
+    @staticmethod
+    def greeting():
+        print("Привет")
 
-class Rectangle(Shape):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
+class English:
+    @staticmethod
+    def greeting():
+        print("Hello")
 
-    def area(self):
-        return self.width * self.height
+def greet(language):
+    language.greeting()
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return 3.14 * self.radius * self.radius
-
-shapes = [
-    Rectangle(5, 8),
-    Circle(7)
-]
-
-for shape in shapes:
-    print(shape.area())
+ivan = Russian()
+john = English()
+greet(ivan)
+greet(john)

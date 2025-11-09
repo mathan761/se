@@ -1,12 +1,15 @@
-class Car:
-    def __init__(self, make, model):
-        self._make = make      # Защищённый атрибут
-        self.__model = model   # Приватный атрибут
+class Mammal:
+    className = "Mammal"
 
-    def drive(self):
-        print(f"Driving the {self._make} {self.__model}")
+class Dog(Mammal):
+    species = "canine"
+    sounds = "wow"
 
-my_car = Car("Toyota", "Corolla")
-print(my_car._make)        # Доступ к защищённому атрибуту
-# print(my_car.__model)    # Ошибка! Приватный атрибут не доступен
-my_car.drive()
+class Cat(Mammal):
+    species = "feline"
+    sounds = "meow"
+
+dog = Dog()
+print(f"Dog is {dog.className}, but they say {dog.sounds}")
+cat = Cat()
+print(f"Cat is {cat.className}, but they say {cat.sounds}")

@@ -1,19 +1,23 @@
-class Car:
-    def __init__(self, make, model):
-        self.make = make
-        self.model = model
+class MyClass:
+    def __init__(self, value):
+        self._value = value
 
-    def drive(self):
-        print(f"Driving the {self.make} {self.model}")
+    def set_value(self, value):
+        self._value = value
 
-class ElectricCar(Car):
-    def __init__(self, make, model, battery_capacity):
-        super().__init__(make, model)
-        self.battery_capacity = battery_capacity
+    def get_value(self):
+        return self._value
 
-    def charge(self):
-        print(f"Charging the {self.make} {self.model} S with {self.battery_capacity} kWh")
+    def del_value(self):
+        del self._value
 
-my_electric_car = ElectricCar("Tesla", "Model S", 75)
-my_electric_car.drive()
-my_electric_car.charge()
+    value = property(get_value, set_value, del_value, "Свойство value")
+
+obj = MyClass(42)
+print(obj.get_value())
+obj.set_value(45)
+print(obj.get_value())
+obj.set_value(100)
+print(obj.get_value())
+obj.del_value()
+print(obj.get_value())

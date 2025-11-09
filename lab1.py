@@ -1,6 +1,14 @@
-class Car:
-    def __init__(self, make, model):
-        self.make = make
-        self.model = model
+class Ivan:
+    __slots__ = ['name']
 
-my_car = Car("Toyota", "Corolla")
+    def __init__(self, name):
+        if name == "Иван":
+            self.name = "Да, я {name}"
+        else:
+            self.name = "Я не {name}, а Иван"
+
+person1 = Ivan("Алексей")
+person2 = Ivan("Иван")
+print(person1.name)
+print(person2.name)
+person2.surname = "Петров"
