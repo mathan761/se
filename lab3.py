@@ -1,23 +1,15 @@
-class MyClass:
-    def __init__(self, value):
-        self._value = value
+def data(*args):
+    try:
+        for i in range(len(args)):
+            try:
+                result = (args[0][i] * 15) // 10
+                print(result)
+            except Exception as ex:
+                print(ex)
+    except Exception as ex:
+        print(ex)
+    finally:
+        print("Вся информация обработана")
 
-    def set_value(self, value):
-        self._value = value
-
-    def get_value(self):
-        return self._value
-
-    def del_value(self):
-        del self._value
-
-    value = property(get_value, set_value, del_value, "Свойство value")
-
-obj = MyClass(42)
-print(obj.get_value())
-obj.set_value(45)
-print(obj.get_value())
-obj.set_value(100)
-print(obj.get_value())
-obj.del_value()
-print(obj.get_value())
+if __name__ == "__main__":
+    data([1, 15, "Hello", "I", "try", "to", "crash", "your", "site", 38, 45])
