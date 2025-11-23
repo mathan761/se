@@ -1,12 +1,12 @@
-class NegativeValueException(Exception):
-    pass
+b = (i ** 2 for i in range(1, 6))
+print(b)  # выводит не числа, а сам генератор списков
 
-def check_name(name):
-    if len(name) > 10:
-        raise NegativeValueException("Имя более 10 символов")
-    else:
-        print("Успешная регистрация")
+print('first')
+for i in b:
+    print(i)
 
-if __name__ == "__main__":
-    name = "12345678910"
-    check_name(name)
+print('second')
+# из-за особенностей выражения генераторов,
+# они не будут выводиться больше одного раза
+for i in b:
+    print(i)

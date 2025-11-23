@@ -1,18 +1,14 @@
-class EmptyFileError(Exception):
-    pass
+def fib(n):
+    a, b = 1, 1
+    with open("fib.txt", "w", encoding="utf-8") as file:
+        for i in range(1, n + 1):
+            file.write(str(a) + "\n")
+            if i == n:
+                print(f"200-е число Фибоначчи: {a}")
+            a, b = b, a + b
 
-def read_file(filename):
-    try:
-        with open(filename, 'r', encoding='utf-8') as f:
-            content = f.read().strip()
-            if not content:
-                raise EmptyFileError("файл пустой")
-            print(content)
-    except EmptyFileError as e:
-        print(e)
-    except FileNotFoundError:
-        print("Файл не найден")
 
-if __name__ == '__main__':
-    read_file("empty.txt")
-    read_file("data.txt")
+# Генерируем и записываем первые 200 чисел Фибоначчи
+fib(200)
+
+print("Все числа успешно записаны в файл fib.txt")

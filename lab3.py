@@ -1,15 +1,9 @@
-def data(*args):
-    try:
-        for i in range(len(args)):
-            try:
-                result = (args[0][i] * 15) // 10
-                print(result)
-            except Exception as ex:
-                print(ex)
-    except Exception as ex:
-        print(ex)
-    finally:
-        print("Вся информация обработана")
+a = [i ** 2 for i in range(1, 6)]
+print(a)
 
-if __name__ == "__main__":
-    data([1, 15, "Hello", "I", "try", "to", "crash", "your", "site", 38, 45])
+for i in a:
+    print(i)
+
+print(iter(a))  # <list_iterator object at ...>
+for i in a:
+    print(i)

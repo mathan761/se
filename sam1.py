@@ -1,19 +1,15 @@
-import time
+def fib(n):
+    a, b = 1, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
 
-def timer(func):
-    def wrapper():
-        start = time.time()
-        func()
-        end = time.time()
-        print(f"\nВремя выполнения: {end - start:.6f} секунд")
-    return wrapper
 
-@timer
-def fibonacci():
-    fib1 = fib2 = 1
-    for i in range(2, 200):
-        fib1, fib2 = fib2, fib1 + fib2
-        print(fib2, end=' ')
 
-if __name__ == '__main__':
-    fibonacci()
+print("Первые 10 чисел Фибоначчи:")
+for i, num in enumerate(fib(10), 1):
+    print(f"{i}-е: {num}")
+
+fib_200 = list(fib(200))[-1]
+print("\n200-е число Фибоначчи:")
+print(fib_200)
